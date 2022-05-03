@@ -3,7 +3,26 @@
 {{title}}
 {%endblock%}
 {%block content%}
-<div>
+
+<div class="row mx-auto d-flex justify-content-center">
+    <h3 class="pt-3 mt-3 text-center">Top Sources</h3>
+    {%for n in news%}
+    <div class="card col-md-6 m-3 p-2" style="width: 20rem;">
+        <div class="card-body">
+            <h6 class="card-title text-danger"><strong>{{n.name}}</strong></h6>
+            <p class="card-text mt-3">{{n.description}}</p>
+            <p class="card-text mt-3">{{n.category}}</p>
+            <p href="#" class="btn mt-1">
+                <a href="{{n.url}}" class="readmore text-danger">View Articles...</a>
+            </p>
+        </div>
+    </div>
+    {%endfor%}
+</div>
+
+
+
+<!-- <div>
     <h5>Top sources</h5>
     <ul>
         {%for n in news %}
@@ -20,5 +39,5 @@
         {%endfor%}
 
     </ul>
-</div>
+</div> -->
 {%endblock%}
