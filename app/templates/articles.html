@@ -4,7 +4,6 @@
 {%endblock%}
 {%block content%}
 
-
 <div class="row mx-auto d-flex justify-content-center">
     <h3 class="pt-3 mt-3 text-center">Top Articles</h3>
     {%for article in articles%}
@@ -23,25 +22,4 @@
     </div>
     {%endfor%}
 </div>
-
-<!-- <div>
-    <h5 class="pt-4">Top Articles</h5>
-    <ul>    
-            {%for article in articles%}
-            <li class="list-unstyled mx-auto p-4, border-bottom">
-                <img src="{{article.urlToImage}}" alt="" class="image p-4">
-                <p><span><strong>{{article.title}}</strong></span></p>
-                <p class="p-2 my-2"><strong></strong><span>{{article.content}}</span></p>
-                <div class="">
-                    <p>By:<span>{{article.author}}</span></p>  
-                    <p>Date Published:<span>{{article.publishedAt}}</span></p>
-                    <a href="{{article.url}}" target="blank" class="d-block url readmore">Read in Full>></a>
-                </div>
-            </li>
-            {%endfor%}
-        
-    </ul> 
-   
-</div> -->
-
 {%endblock%}
