@@ -19,7 +19,7 @@ def get_sources():
 
         source_results=None
         if jdata["sources"]:
-            source_list=jdata.sources
+            source_list=jdata["sources"]
             source_results=process(source_list)
     return source_results
 
@@ -40,5 +40,8 @@ def process(source_list):
             source_object=Source(id,name,description,url,category,language,country)
             source_results.append(source_object)
     return source_results
+
+def get_articles():
+    f_url=articles_url.format(api_key)
 
 

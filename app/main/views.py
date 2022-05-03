@@ -9,3 +9,9 @@ def index():
     all_news=get_sources()
 
     return render_template("index.html", title=title, news=all_news)
+
+@main.route("/articles")
+def articles():
+
+
+    return render_template("articles.html")
