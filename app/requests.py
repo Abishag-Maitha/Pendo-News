@@ -27,4 +27,16 @@ def process(source_list):
     '''
     the function creates a new list using the class source as a blueprint
     '''
+    source_results=[]
+    for source in source_list:
+        id=source.get("id")
+        name=source.get("name")
+        description=source.get("description")
+        url=source.get("url")
+        category=source.get("category")
+        language=source.get("language")
+        country=source.get("country")
+        if language=="en":
+            source_object=Source(id,name,description,url,category,language,country)
+
 
