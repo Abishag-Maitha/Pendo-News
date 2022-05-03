@@ -4,22 +4,44 @@
 {%endblock%}
 {%block content%}
 
-<div>
-    <h5 class="pt-4">Top Articles</h5>
-    <ul>
-        {%for article in articles%}
-        <li class="list-unstyled mx-auto p-4, border-bottom">
-            <img src="{{article.urlToImage}}" alt="" class="image p-4">
-            <p><strong></strong><span>{{article.title}}</span></p>
-            <p class="p-4 my-4"><strong></strong><span>{{article.content}}</span></p>
-            <div class="d-flex justify-content-around">
-                <p><strong>By:</strong><span>{{article.author}}</span></p>  
-                <p><strong>Date Published:</strong><span>{{article.publishedAt}}</span></p>
-                <a href="{{article.url}}" target="blank" class="d-block url readmore">Read in Full>></a>
-            </div>
-        </li>
-        {%endfor%}
-    </ul>
+
+<div class="row mx-auto d-flex justify-content-center">
+    <h3 class="pt-3 mt-3 text-center">Top Articles</h3>
+    {%for article in articles%}
+    <div class="card col-md-6 m-3 p-2" style="width: 20rem;">
+        <img src="{{article.urlToImage}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h6 class="card-title text-danger"><strong>{{article.title}}</strong></h6>
+            <p class="card-text mt-3">{{article.description}}</p>
+            <p class="card-text mt-3">{{article.content}}</p>
+            <p class="card-text mt-3">By: {{article.author}}</p>
+            <p class="card-text mt-3">Date Published: {{article.publishedAt}} </p>
+            <p href="#" class="btn mt-1">
+                <a href="{{article.url}}" class="readmore text-danger">Read More...</a>
+            </p>
+        </div>
+    </div>
+    {%endfor%}
 </div>
+
+<!-- <div>
+    <h5 class="pt-4">Top Articles</h5>
+    <ul>    
+            {%for article in articles%}
+            <li class="list-unstyled mx-auto p-4, border-bottom">
+                <img src="{{article.urlToImage}}" alt="" class="image p-4">
+                <p><span><strong>{{article.title}}</strong></span></p>
+                <p class="p-2 my-2"><strong></strong><span>{{article.content}}</span></p>
+                <div class="">
+                    <p>By:<span>{{article.author}}</span></p>  
+                    <p>Date Published:<span>{{article.publishedAt}}</span></p>
+                    <a href="{{article.url}}" target="blank" class="d-block url readmore">Read in Full>></a>
+                </div>
+            </li>
+            {%endfor%}
+        
+    </ul> 
+   
+</div> -->
 
 {%endblock%}
