@@ -13,15 +13,26 @@
     </title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-info p-4">
+    <nav class="navbar navbar-expand-lg navbar-light bg-info p-3">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Pendo News</a>
+          <a class="navbar-brand" href="#">Pendo-News</a>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-link active" href="{{url_for("main.index")}}">Sources</a>
+              <a class="nav-link active" href="{{url_for("main.index")}}">News Sources</a>
               <a class="nav-link active" aria-current="page" href="{{url_for("main.articles")}}">Articles</a>
             </div>
           </div>
+          <div class="row">
+            <div class="location">
+                <p><i class="fa-solid fa-location-dot"></i> Beijing Road, Athi River-Kenya</p>
+            </div>
+            <div class="contact">
+                <p>
+                    <strong><i class="fa-solid fa-square-phone"></i></strong> +254 700112233<br>
+                    <strong><i class="fa-solid fa-envelope"></i></strong> info@pnews.com
+                </p>
+            </div>
+         </div>
         </div>
       </nav>
     <main>
@@ -30,7 +41,20 @@
             {%endblock%}
         </div>
     </main>
-    
+    <footer class="bg-info" id="footer">
+        <div class=" col-md-4 container">
+            <div class="copyright">
+               <small>
+                © Copyright
+                <strong> <span>Pendo News</span></strong>.
+                All Rights Reserved
+               </small>
+            </div>
+            <div class="credits">
+                <p><small>Designed by: <strong>Abishag Maitha</strong></small></p> 
+            </div>
+        </div>   
+    </footer>
     <script src="{{url_for('static', filename='JS/script.js')}}"></script>
 </body>
 </html>
