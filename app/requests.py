@@ -43,5 +43,35 @@ def process(source_list):
 
 def get_articles():
     f_url=articles_url.format(api_key)
+    with urllib.request.urlopen(f_url)as url:
+        data=url.read()
+        jdata=json.loads(data)
+        articles_results= None
+        if jdata["articles"]:
+            article_list=jdata["articles"]
+            articles_results=refine(article_list)
+
+    return article_list
+def refine(article_list):
+    article_results=[]
+    for a in article_list:
+        source=a.get("source")
+        author=a.get("author")
+        title=a.get("title")
+        description=a.get("description")
+        url=a.get("url")
+        urlToImage=a.get("urlToImage")
+        publishedAt=a.get("publishedAt")
+        content=a.get("content")
+
+        if source:
+            articles_object=Article(source,author,title,description,url,urlToImage,publishedAt,content)
+            article_results.append(articles_object)
+    return article_results
+        
+
+
+
+
 
 
