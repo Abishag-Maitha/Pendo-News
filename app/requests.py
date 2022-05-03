@@ -12,3 +12,12 @@ def get_sources():
     '''
     this is a function that fetches source information
     '''
+    fetch_url=source_url.format(api_key)
+    with urllib.request.urlopen(fetch_url)as url:
+        data=url.read()
+        jdata=json.loads(data)
+
+        source_results=None
+        if jdata["sources"]:
+            source_list=jdata.sources
+            source_results=process(source_list)
