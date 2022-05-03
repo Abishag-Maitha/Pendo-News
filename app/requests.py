@@ -21,3 +21,8 @@ def get_sources():
         if jdata["sources"]:
             source_list=jdata.sources
             source_results=process(source_list)
+
+def process(source_list):
+    '''
+    the function creates a new list using the class source as a blueprint
+    '''
