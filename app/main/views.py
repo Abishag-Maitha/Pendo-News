@@ -1,6 +1,7 @@
+from turtle import title
 from flask import render_template,url_for
 from . import main
-from ..requests import get_sources
+from ..requests import get_sources, get_articles
 
 
 @main.route("/")
@@ -12,6 +13,8 @@ def index():
 
 @main.route("/articles")
 def articles():
+    title="Articles"
+    all_articles=get_articles()
 
 
-    return render_template("articles.html")
+    return render_template("articles.html", title=title, articles=all_articles)
