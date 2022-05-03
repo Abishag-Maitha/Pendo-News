@@ -1,7 +1,3 @@
-from nturl2path import url2pathname
-from typing_extensions import Self
-
-
 class Article:
     def __init__(self, source, author,title, description, url, urlToImage, publishedAt, content):
         self.source=source
