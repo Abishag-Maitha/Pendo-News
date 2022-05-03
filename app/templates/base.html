@@ -26,8 +26,12 @@
           </div>
         </div>
       </nav>
-    {%block content%}
-    {%endblock%}
+    <main>
+        <div class="content text-center mx-auto">
+            {%block content%}
+            {%endblock%}
+        </div>
+    </main>
     
     <script src="{{url_for('static', filename='JS/script.js')}}"></script>
 </body>
