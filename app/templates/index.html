@@ -4,40 +4,35 @@
 {%endblock%}
 {%block content%}
 
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mt-3 p-3">
+            <h4>It's PendoNews,the broadcasts beyond borders!</h4>
+            <hr>
+            <p>The PendoNews brings you all you need to know about everything that matters. More than a news digest – it's an original take on world news as it happens. 
+            </p>
+            <p>We provide you with trusted world news as well as local and regional perspectives. Also entertainment, business, science, technology and health news.
+            </p>
+        </div>
+        <div class="col-md-4 mt-3 p-3">
+            <img class="w-100" src="{{url_for('static',filename='images/news.jpg')}}" alt="">
+        </div>
+    </div>
+</div>
+
 <div class="row mx-auto d-flex justify-content-center">
     <h3 class="pt-3 mt-3 text-center">Top Sources</h3>
     {%for n in news%}
     <div class="card col-md-6 m-3 p-2" style="width: 20rem;">
         <div class="card-body">
-            <h6 class="card-title text-danger"><strong>{{n.name}}</strong></h6>
+            <h6 class="card-title"><strong>{{n.name}}</strong></h6>
             <p class="card-text mt-3">{{n.description}}</p>
             <p class="card-text mt-3">{{n.category}}</p>
             <p href="#" class="btn mt-1">
-                <a href="{{n.url}}" class="readmore text-danger">View Articles...</a>
+                <a href="{{n.url}}" class="readmore text-danger">View Articles >></a>
             </p>
         </div>
     </div>
     {%endfor%}
 </div>
-
-
-
-<!-- <div>
-    <h5>Top sources</h5>
-    <ul>
-        {%for n in news %}
-        <li class="list-unstyled w-75 p-4 border mx-auto">
-            <p><strong>Name:</strong><span class="text-danger ms-2">{{n.name}}</span></p>
-            <p><strong>Description:</strong><span class="text-danger ms-2">{{n.description}}</span></p>
-            <div class="d-flex justify-content-around">
-                <a href="{{n.url}}" class="d-block readmore" target="blank">Read More...</a>
-                <p><strong>Language:</strong><span class="text-danger ms-2">{{n.language}}</span></p>
-                <p><strong>Category:</strong><span class="text-danger ms-2">{{n.category}}</span></p>
-            </div>  
-            <p><strong>Country:</strong><span class="text-danger ms-2">{{n.country}}</span></p>
-        </li>
-        {%endfor%}
-
-    </ul>
-</div> -->
 {%endblock%}
