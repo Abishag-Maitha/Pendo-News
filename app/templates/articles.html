@@ -3,23 +3,19 @@
 {{title}}
 {%endblock%}
 {%block content%}
-<style>
-.image{
-    width: 75%;
-}
-</style>
+
 <div>
-    <h3>News Articles</h3>
+    <h5 class="pt-4">Top Articles</h5>
     <ul>
         {%for article in articles%}
         <li class="list-unstyled mx-auto p-4, border-bottom">
-            <p><strong>Title:</strong><span>{{article.title}}</span></p>
-            <img src="{{article.urlToImage}}" alt="" class="image">
-            <p class="p-4 my-4"><strong>Content:</strong><span>{{article.content}}</span></p>
+            <img src="{{article.urlToImage}}" alt="" class="image p-4">
+            <p><strong></strong><span>{{article.title}}</span></p>
+            <p class="p-4 my-4"><strong></strong><span>{{article.content}}</span></p>
             <div class="d-flex justify-content-around">
-                <p><strong>Author:</strong><span>{{article.author}}</span></p>  
-                <p><strong>Published at:</strong><span>{{article.publishedAt}}</span></p>
-                <a href="{{article.url}}" target="blank" class="d-block">Read in Full>></a>
+                <p><strong>By:</strong><span>{{article.author}}</span></p>  
+                <p><strong>Date Published:</strong><span>{{article.publishedAt}}</span></p>
+                <a href="{{article.url}}" target="blank" class="d-block url readmore">Read in Full>></a>
             </div>
         </li>
         {%endfor%}
