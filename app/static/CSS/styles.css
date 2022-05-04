@@ -6,6 +6,13 @@
 }
 .readmore{
     text-decoration: none;
+    color: white;
+    background-color: blue;
+}
+.view_articles{
+    text-decoration: none;
+    color: white;
+    background-color: blue;
 }
 .image{
     width: 30%;
